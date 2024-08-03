@@ -120,7 +120,10 @@ fi
 chmod +x fetchYoutube.py
 
 #add outputfile
+#crop URL to get part after file /
+cropURL="${1##*/}"
+#echo $cropURL
+outputFile="../downloads/$cropURL.mp4"
 
-outputFile="../downloads/$1.mp4"
 #run python script with provided youtube URL by user
 python3 ./fetchYoutube.py $1 $outputFile
